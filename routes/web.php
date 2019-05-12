@@ -12,6 +12,7 @@
 */
 
 Route::get('/alunos/{id?}', 'AlunoController@index');
+Route::post('/alunos/filtro', 'AlunoController@filtro');
 Route::post('/alunos', 'AlunoController@store');
 Route::post('/alunos/{id}', 'AlunoController@update');
 Route::delete('/alunos/{id}', 'AlunoController@destroy');

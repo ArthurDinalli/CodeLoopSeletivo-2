@@ -18,7 +18,10 @@ class AlunoController extends Controller
             return $this->show($id);
         }
     }
-
+    public function filtro (Request $req) {
+        $alunos = Aluno::where("nome", "like", "%".$req->input('nome')."%")->get();
+        return $alunos;
+    }
     
     
     public function store(Request $req){
