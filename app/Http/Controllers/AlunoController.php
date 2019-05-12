@@ -22,11 +22,14 @@ class AlunoController extends Controller
     
     
     public function store(Request $req){
-        error_log($req->input('nome'));
-        $novo = new Aluno;
-        
+        $novo = null;
+        if($req->exists('id')){
+            $novo = Aluno::find( $req->input('id') );
+        }else{
+            $novo = new Aluno;
+        }
+    
         $novo->nome = $req->input('nome');
-        error_log($novo->nome);
         $novo->nasc = $req->input('nasc');
         $novo->serie = $req->input('serie');
 
