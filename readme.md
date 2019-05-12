@@ -18,6 +18,8 @@ Preencher os campos DB_DATABASE, DB_USERNAME, DB_PASSWORD no arquivo .env
 
 php artisan migrate
 
+php artisan key:generate
+
 php artisan serve
 
 
